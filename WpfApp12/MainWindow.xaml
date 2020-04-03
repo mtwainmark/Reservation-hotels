@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp12"
+        mc:Ignorable="d"
+        Title="Бронирование отелей" WindowStartupLocation="CenterScreen" Height="600" Width="1250">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <ListBox>
+                <ListBoxItem Margin="5" Content="Поиск" Selected="ListBoxItem_Selected"/>
+                <ListBoxItem Margin="5" Content="Клиенты" Selected="ListBoxItem_Selected_1"/>
+                <ListBoxItem Margin="5" Content="Бронирования" Selected="ListBoxItem_Selected_2"/>
+            </ListBox>
+        </Grid>
+
+        <Grid x:Name="mainGrid" Grid.Column="1">
+            
+        </Grid>
+    </Grid>
+</Window>
