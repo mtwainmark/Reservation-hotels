@@ -423,6 +423,16 @@ namespace WpfApp12.ViewModels
             }
 
 
+            if (RoomsList.Count == 0)
+            {
+                SearchModel searchNone = new SearchModel()
+                {
+                    Title = "не найден"
+                };
+                RoomsList.Add(searchNone);
+            }
+
+
         }
         #endregion
 
@@ -474,6 +484,7 @@ namespace WpfApp12.ViewModels
             {
                 try
                 {
+                    
                     AddClientView view = new AddClientView(guest = new Guests());
                     if (view.ShowDialog() == true)
                     {
@@ -481,7 +492,7 @@ namespace WpfApp12.ViewModels
                         db.Guests.Add(clientadd);
                         db.SaveChanges();
                     }
-
+                    
                     Reservations res = new Reservations()
                     {
                         IdHotels = SelectedRoom.IdHotels,
@@ -492,6 +503,7 @@ namespace WpfApp12.ViewModels
                     };
                     db.Reservations.Add(res);
                     db.SaveChanges();
+
                 }
                 catch { }
             }));
